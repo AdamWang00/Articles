@@ -1,5 +1,6 @@
 from flask import jsonify, request, Blueprint
 from artcl.main.index import Index
+from artcl.main.query import Query
 
 main = Blueprint('main', __name__)
 
@@ -16,6 +17,13 @@ def api_query():
 	else:
 		return "error: no keywords provided"
 
+	if 'limit' in request.args:
+		limit = request.args['limit']
+	else:
+		limit = 10
+
+	res = Query.query(keywords, limit)
+
 	return "todo"
 	return jsonify()
 
@@ -27,4 +35,6 @@ def api_index():
 	else:
 		return "error: no url provided"
 
-	return Index.index(url)
+	x = Index.index(url)
+	return "todo" + x
+	return jsonify()

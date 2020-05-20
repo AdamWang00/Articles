@@ -1,4 +1,6 @@
 class StopWords:
+
+  # English stopwords
   STOPWORDS = ["a", "about", "above", "after", "against", "all", "am", "an",
   "and", "any", "are", "aren't", "as", "at", "be", "because", "been",
   "before", "be", "below", "between", "both", "but", "by", "can't",
